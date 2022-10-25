@@ -1,0 +1,40 @@
+﻿@using ShortURL.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"><font color="B245"><b>Сокращение ссылок</b></font></h1>
+    <p>Введите ссылку, которую надо сократить:</p>
+</div>
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Оригинальная ссылка</th>
+                    <th>Создана</th>
+                    <th>Которткая ссылка</th>
+                    <th>Количество переходов</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+               {
+                   <tr>
+                        <td>@item.LongUrl</td>
+                        <td>@item.Created</td>
+                        <td>@item.ShortUrl</td>
+                        <td>@item.Clicks</td>
+                   </tr>
+                   
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <a href="Home/AddLink" class="btn add-btn">
+            <i class="fade fa-plus"></i> Add Link
+        </a>
+    </div>
+</div>
