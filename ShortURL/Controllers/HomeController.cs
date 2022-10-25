@@ -32,7 +32,7 @@ namespace ShortURL.Controllers
             var _Links = new Links
             {
                 LongUrl = _NewLink.LongUrl,
-                Created = 1,
+                Created = DateTime.Now.ToString(),
                 ShortUrl = "https://localhost:44324/Home/" + _NewLink.GetHash(),
                 Clicks = 2
             };
