@@ -33,10 +33,10 @@ namespace ShortURL.Controllers
             {
                 LongUrl = _NewLink.LongUrl,
                 Created = 1,
-                ShortUrl = _NewLink.ShortUrl,
+                ShortUrl = "https://localhost:44324/Home/" + _NewLink.GetHash(),
                 Clicks = 2
             };
-            if((_NewLink.LongUrl != null) && (_NewLink.ShortUrl != null))
+            if((_NewLink.LongUrl != null))
             {
                 _context.Links.Add(_Links);
                 _context.SaveChanges();
@@ -47,7 +47,7 @@ namespace ShortURL.Controllers
                 return View(_Links);
             }
         }
-
+        
         public IActionResult Privacy()
         {
             return View();
