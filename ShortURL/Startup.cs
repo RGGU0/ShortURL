@@ -44,6 +44,7 @@ namespace ShortURL
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -55,6 +56,14 @@ namespace ShortURL
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+            });
+
+            app.Run(async (context) =>
+            {
+                if ("/Home/test" == context.Request.Path)
+                {
+                    context.Response.Redirect("https://thiscatdoesnotexist.com"); 
+                }
             });
         }
     }

@@ -22,9 +22,9 @@
                 @foreach (var item in Model)
                {
                    <tr>
-                        <td>@item.LongUrl</td>
+                        <td><a href=@item.LongUrl>@item.LongUrl</a></td>
                         <td>@item.Created</td>
-                        <td>@item.ShortUrl</td>
+                        <td><a href=@item.ShortUrl>@item.ShortUrl</a></td>
                         <td>@item.Clicks</td>
                    </tr>
                    
