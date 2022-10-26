@@ -22,9 +22,9 @@
                 @foreach (var item in Model)
                {
                    <tr>
-                        <td>@item.LongUrl</td>
+                        <td><a href=@item.LongUrl>@item.LongUrl</a></td>
                         <td>@item.Created</td>
-                        <td>@item.ShortUrl</td>
+                        <td><a href=@item.ShortUrl>@item.ShortUrl</a></td>
                         <td>@item.Clicks</td>
                    </tr>
                    
@@ -34,7 +34,7 @@
     </div>
     <div class="row">
         <a href="Home/AddLink" class="btn add-btn">
-            <i class="fade fa-plus"></i> Add Link
+            <i class="fade fa-plus"></i> <font color="B245"><b>Добавить ссылку</b></font>
         </a>
     </div>
 </div>
